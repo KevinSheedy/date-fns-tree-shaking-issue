@@ -1,4 +1,5 @@
 const path = require('path');
+const nodeExternals = require('webpack-node-externals');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
   .BundleAnalyzerPlugin;
 
@@ -40,5 +41,6 @@ module.exports = {
     libraryTarget: 'umd',
     libraryExport: 'default',
   },
-  target: 'web'
+  target: 'web',
+  externals: [nodeExternals()]
 };
